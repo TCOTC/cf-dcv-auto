@@ -1,0 +1,15 @@
+version: 2
+
+updates:
+  # 自动更新 workflow 里用到的 Action（例如 actions/checkout）
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
+    groups:
+      github-actions:
+        patterns:
+          - "*"

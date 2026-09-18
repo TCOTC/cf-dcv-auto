@@ -55,7 +55,10 @@ Actions → `Cloudflare DCV auto` → Run workflow，先勾上 `dry_run` 看日�
 | --- | --- |
 | `schedule: 23 3 * * *` | 每天一次（UTC 03:23 = 北京时间 11:23） |
 | `schedule: 0 3 1 * *` | 每月 1 号提交心跳，防止 60 天无提交导致定时任务被停用 |
-| `workflow_dispatch` | 手动触发，可勾选 `dry_run` |
+| `workflow_dispatch` | 手动触发，可勾选 `dry_run`；另有 `keepalive` 可用来单独验证每月心跳任务 |
+
+工作流里使用的 Action（目前只有 `actions/checkout`）由 Dependabot 每周检查并提 PR
+（配置见 `.github/dependabot.yml`），合并前可以先看 PR 里的 release notes。
 
 可用的环境变量（在 workflow 里追加）：
 
