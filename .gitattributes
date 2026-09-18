@@ -1,0 +1,4 @@
+# 仓库内统一使用 LF，避免在 Windows 上编辑后 workflow 变成 CRLF 导致 bash 执行失败
+* text=auto eol=lf
+*.png binary
+*.jpg binary
